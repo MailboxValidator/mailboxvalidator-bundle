@@ -4,9 +4,9 @@
     "description": "Symfony bundle that used MailboxValidator API to validate email in form.",
     "keywords": [
 		"Symfony",
-		"Symfony4"
-        "validator",
-        "email",
+		"Symfony4",
+		"validator",
+		"email",
 		"mailboxvalidator",
 		"email validation",
 		"bundle",
