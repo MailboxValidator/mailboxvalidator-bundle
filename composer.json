@@ -20,8 +20,8 @@
         }
     ],
     "require": {
-        "php": "^>=5.3",
-        "symfony/framework-bundle": "4.3.*",
+        "php": ">=5.3",
+        "symfony/symfony": "4.3.*",
         "symfony/validator": "4.3.*",
         "mailboxvalidator/mailboxvalidator-php": "1.1.*"
     },
