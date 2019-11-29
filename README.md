@@ -1,12 +1,12 @@
 # MailboxValidator Symfony Email Validation Bundle
 
-MailboxValidator Symfony Email Validation Bundle provides an easy way to call the MailboxValidator API which validates if an email address is valid.
+MailboxValidator Symfony Email Validation Bundle provides user an easy and simple way to perform email validation, if it's a valid email, by leveraging the MailboxValidator API. If you do not own a MailboxValidator API, you can sign up for a free one at [https://www.mailboxvalidator.com](https://www.mailboxvalidator.com/plans#api).
 
-Note: This bundle required at least Symfony 4.3 to work with.
+Note: This bundle only support Symfony 4.3 and onwards.
 
 ## Installation
 
-Open the terminal, navigate to your project root and run the following commands:
+We recommend the installation via Composer. Open the terminal, navigate to your project root and run the following commands:
 
 ```console
 $ composer require mailboxvalidator/mailboxvalidator-bundle
@@ -16,9 +16,9 @@ $ composer require mailboxvalidator/mailboxvalidator-bundle
 
 An API key is required for this module to function.
 
-1. Go to https://www.mailboxvalidator.com/plans#api to sign up for FREE API plan and you'll be given an API key.
+1. Go to [https://www.mailboxvalidator.com](https://www.mailboxvalidator.com/plans#api) to sign up for FREE API plan if you do not have an API key.
 
-2. After you get your API key, load a ``.env`` file in your PHP application via ``Dotenv::load()``.
+2. After obtained your API key, load a ``.env`` file in your PHP application via ``Dotenv::load()``.
 
 ```php
 use Symfony\Component\Dotenv\Dotenv;
@@ -33,7 +33,7 @@ $dotenv->load(__DIR__.'/.env'); //Your .env file path
 MBV_API_KEY=PASTE_YOUR_API_KEY_HERE
 ```
 
-Note: MailboxValidator PHP Module is required and will be auto installed by Composer. If in case your Composer did not install it for you, you can get it from here:  https://github.com/MailboxValidator/mailboxvalidator-php .
+Notes: You need to install the MailboxValidator PHP Module in order to use this bundle. You can visit https://github.com/MailboxValidator/mailboxvalidator-php for the source codes.
 
 ## Usage
 
@@ -51,11 +51,11 @@ use MailboxValidatorBundle\Validator\MBVFree;
 
 ```php
 ->add('email', EmailType::class, [
-				'constraints' => [
-                    new MBVDisposable([
-						//You can also custom a message yourself. For example,
-						//'message' => 'This email is disposable. Please enter another email again.',
-                    ]),
+			'constraints' => [
+				new MBVDisposable([
+					//You can also custom a message yourself. For example,
+					//'message' => 'This email is disposable. Please enter another email again.',
+					]),
 				],
 			])
 ```
@@ -64,4 +64,4 @@ use MailboxValidatorBundle\Validator\MBVFree;
 
 ## Copyright
 
-Copyright (C) 2019 by MailboxValidator.com, support@mailboxvalidator.com
+Copyright (C) 2019 by MailboxValidator.com
