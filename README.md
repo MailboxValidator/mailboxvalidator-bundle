@@ -1,6 +1,13 @@
 # MailboxValidator Symfony Email Validation Bundle
 
-MailboxValidator Symfony Email Validation Bundle provides user an easy and simple way to perform email validation, if it's a valid email, by leveraging the MailboxValidator API. If you do not own a MailboxValidator API, you can sign up for a free one at [https://www.mailboxvalidator.com](https://www.mailboxvalidator.com/plans#api).
+MailboxValidator Symfony Email Validation Bundle enables user to easily validate if an email address is valid, a type of disposable email or free email.
+
+This bundle can be useful in many types of projects, for example
+
+ - to validate an user's email during sign up
+ - to clean your mailing list prior to email sending
+ - to perform fraud check
+ - and so on
 
 Note: This bundle only support Symfony 4.3 and onwards.
 
