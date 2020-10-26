@@ -6,7 +6,7 @@ use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
 // We will use MailboxValidator PHP library to do our validation
-use MailboxValidator\SingleValidation;
+use MailboxValidator\EmailValidation;
 
 class MBVDisposableValidator extends ConstraintValidator
 {
@@ -16,13 +16,13 @@ class MBVDisposableValidator extends ConstraintValidator
 
 		$apikey = $_ENV['MBV_API_KEY'];
 
-		$mbv = new SingleValidation($apikey);
+		$mbv = new EmailValidation($apikey);
 
 		if($apikey == ''){
 
 		}
 		else {
-			$results = $mbv->DisposableEmail($value);
+			$results = $mbv->isDisposableEmail($value);
 			
 			if ($results === false) {
 				return; //return "Error connecting to API."
