@@ -6,7 +6,7 @@ use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
 // We will use MailboxValidator PHP library to do our validation
-use MailboxValidator\SingleValidation;
+use MailboxValidator\EmailValidation;
 
 class MBVFreeValidator extends ConstraintValidator
 {
@@ -16,13 +16,13 @@ class MBVFreeValidator extends ConstraintValidator
 
 		$apikey = $_ENV['MBV_API_KEY'];
 
-		$mbv = new SingleValidation($apikey);
+		$mbv = new EmailValidation($apikey);
 
 		if($apikey == ''){
 
 		}
 		else{
-			$results = $mbv->FreeEmail($value);
+			$results = $mbv->isFreeEmail($value);
 			
 			if ($results === false) {
 				return; //return "Error connecting to API."
