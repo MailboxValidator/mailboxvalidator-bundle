@@ -71,4 +71,4 @@ use MailboxValidatorBundle\Validator\MBVFree;
 
 ## Copyright
 
-Copyright (C) 2019 by MailboxValidator.com
+Copyright (C) 2024 by MailboxValidator.com

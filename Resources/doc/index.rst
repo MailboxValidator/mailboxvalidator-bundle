@@ -60,7 +60,7 @@ The validators available to validate the email are: single, free and disposable.
 Copyright
 ---------
 
-Copyright (C) 2019 by MailboxValidator.com, support@mailboxvalidator.com
+Copyright (C) 2024 by MailboxValidator.com, support@mailboxvalidator.com
 
 .. _`Single Validation API`: https://www.mailboxvalidator.com/api-single-validation
 .. _`Disposable Email API`: https://www.mailboxvalidator.com/api-email-disposable
