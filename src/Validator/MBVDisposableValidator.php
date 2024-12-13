@@ -10,7 +10,7 @@ use MailboxValidator\EmailValidation;
 
 class MBVDisposableValidator extends ConstraintValidator
 {
-    public function validate($value, Constraint $constraint)
+    public function validate(mixed $value, Constraint $constraint): void
     {
 		/* @var $constraint \App\Validator\MBVDisposable */
 
@@ -26,11 +26,11 @@ class MBVDisposableValidator extends ConstraintValidator
 			
 			if ($results === false) {
 				return; //return "Error connecting to API."
-			} else if (trim($results->error_code) == '') {
-				if ($results->is_disposable == 'False') {
+			} else if ((! isset($results->error_code)) && (isset($results->is_disposable))) {
+				if (! $results->is_disposable) {
 					return;
 				}
-			} else if (trim($results->error_code) != ''){			
+			} else if ((isset($results->error_code)) && (trim($results->error_code) != '')){
 				return;
 			}
 		

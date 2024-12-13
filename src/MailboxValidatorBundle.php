@@ -1,5 +1,5 @@
 <?php
-namespace MailboxValidator\MailboxValidatorBundle;
+namespace MailboxValidatorBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

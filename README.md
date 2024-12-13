@@ -25,7 +25,7 @@ An API key is required for this module to function.
 
 1. Go to [https://www.mailboxvalidator.com](https://www.mailboxvalidator.com/plans#api) to sign up for FREE API plan if you do not have an API key.
 
-2. After obtained your API key, load a ``.env`` file in your PHP application via ``Dotenv::load()``.
+2. (If you are at Symfony 4) After obtained your API key, load a ``.env`` file in your PHP application via ``Dotenv::load()``.
 
 ```php
 use Symfony\Component\Dotenv\Dotenv;
@@ -43,6 +43,16 @@ MBV_API_KEY=PASTE_YOUR_API_KEY_HERE
 Notes: You need to install the MailboxValidator PHP Module in order to use this bundle. You can visit https://github.com/MailboxValidator/mailboxvalidator-php for the source codes.
 
 ## Usage
+
+Before using the validator, be sure to add the bundle into the `config/bundles.php` file:
+
+```PHP
+// config/bundles.php
+return [
+    ...
+    MailboxValidatorBundle\MailboxValidatorBundle::class => ['all' => true],
+];
+```
 
 The validators available to validate the email are: single, free and disposable. Each validator validate the email by using MailboxValidator API. For more information, you can visit [Single Validation API](https://www.mailboxvalidator.com/api-single-validation), [Disposable Email API](https://www.mailboxvalidator.com/api-email-disposable) and [Free Email API](https://www.mailboxvalidator.com/api-email-free). 
 

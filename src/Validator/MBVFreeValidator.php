@@ -10,7 +10,7 @@ use MailboxValidator\EmailValidation;
 
 class MBVFreeValidator extends ConstraintValidator
 {
-    public function validate($value, Constraint $constraint)
+    public function validate(mixed $value, Constraint $constraint): void
     {
 		/* @var $constraint \App\Validator\MBVFree */
 
@@ -26,11 +26,11 @@ class MBVFreeValidator extends ConstraintValidator
 			
 			if ($results === false) {
 				return; //return "Error connecting to API."
-			} else if (trim($results->error_code) == '') {
-				if ($results->is_free == 'False') {
+			} else if ((! isset($results->error_code)) && (isset($results->is_free))) {
+				if (! $results->is_free) {
 					return;
 				}
-			} else if (trim($results->error_code) != ''){			
+			} else if ((isset($results->error_code)) && (trim($results->error_code) != ''))
 				return;
 			}
 		

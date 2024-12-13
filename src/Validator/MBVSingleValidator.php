@@ -10,7 +10,7 @@ use MailboxValidator\EmailValidation;
 
 class MBVSingleValidator extends ConstraintValidator
 {
-    public function validate($value, Constraint $constraint)
+    public function validate(mixed $value, Constraint $constraint): void
     {
 		/* @var $constraint \App\Validator\MBVSingle */
 		
@@ -26,11 +26,11 @@ class MBVSingleValidator extends ConstraintValidator
 		
 			if ($results === false) {
 				return; //return "Error connecting to API."
-			} else if (trim($results->error_code) == '') {
-				if ($results->status == 'True') {
+			} else if (! isset($results->error_code)) {
+				if ($results->status) {
 					return;
 				}
-			} else if (trim($results->error_code) != ''){			
+			} else if ((isset($results->error_code)) && (trim($results->error_code) != ''))
 				return;
 			}
 

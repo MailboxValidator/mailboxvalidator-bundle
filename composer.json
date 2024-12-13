@@ -4,7 +4,6 @@
     "description": "Symfony bundle that used MailboxValidator API to validate email in form.",
     "keywords": [
 		"Symfony",
-		"Symfony4",
 		"validator",
 		"email",
 		"mailboxvalidator",
@@ -21,15 +20,13 @@
     ],
     "require": {
         "php": ">=5.3",
-        "symfony/symfony": "4.3.*",
-        "symfony/validator": "4.3.*",
-        "mailboxvalidator/mailboxvalidator-php": "2.0.*"
+        "symfony/framework-bundle": "^7.2",
+        "mailboxvalidator/mailboxvalidator-php": "2.*.*"
     },
     "require-dev": {
         "phpunit/phpunit": "7.5.*",
-        "symfony/framework-bundle": "4.3.*",
-        "symfony/validator": "4.3.*",
-        "mailboxvalidator/mailboxvalidator-php": "2.0.*"
+        "symfony/framework-bundle": "^7.2",
+        "mailboxvalidator/mailboxvalidator-php": "2.*.*"
     },
     "autoload": {
         "psr-4": {
@@ -41,5 +38,5 @@
             "MailboxValidatorBundle\\Tests\\": "Tests/"
         }
     },
-	"version": "2.0.0"
+	"version": "2.1.0"
 }
