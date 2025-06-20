@@ -30,7 +30,7 @@ class MBVSingleValidator extends ConstraintValidator
 				if ($results->status) {
 					return;
 				}
-			} else if ((isset($results->error_code)) && (trim($results->error_code) != ''))
+			} else if ((isset($results->error_code)) && (trim($results->error_code) != '')) {
 				return;
 			}
 

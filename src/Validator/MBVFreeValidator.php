@@ -30,7 +30,7 @@ class MBVFreeValidator extends ConstraintValidator
 				if (! $results->is_free) {
 					return;
 				}
-			} else if ((isset($results->error_code)) && (trim($results->error_code) != ''))
+			} else if ((isset($results->error_code)) && (trim($results->error_code) != '')) {
 				return;
 			}
 		
